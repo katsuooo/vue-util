@@ -1,0 +1,12 @@
+200828
+select component
+
+single htmlファイルでimportがわからない。
+vue cliをつかう。
+
+./selector がvue cli project
+yarn add vue-select
+
+
+
+
