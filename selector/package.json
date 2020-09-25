@@ -16,7 +16,8 @@
     "vue": "^2.6.11",
     "vue-clock-picker": "^0.4.2",
     "vue-qrcode-reader": "^2.3.13",
-    "vue-select": "^3.10.8"
+    "vue-select": "^3.10.8",
+    "vue2-editor": "^2.10.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
