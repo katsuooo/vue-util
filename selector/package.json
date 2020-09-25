@@ -8,9 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@pencilpix/vue2-clock-picker": "^0.1.6",
     "core-js": "^3.6.5",
     "css-loader": "^4.2.2",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
     "vue": "^2.6.11",
+    "vue-clock-picker": "^0.4.2",
+    "vue-qrcode-reader": "^2.3.13",
     "vue-select": "^3.10.8"
   },
   "devDependencies": {

@@ -1,0 +1,30 @@
+200909
+サイズがあわない。
+文字板をカスタマイズしたい。9-18
+結局ソース編集か、、、
+
+
+vue-click-picker
+青
+時計インプットの横幅が固定。
+>>> bootstrapのclassを放り込む。
+yarn dev
+localhost:8080
+で時計が表示された。
+
+
+vue2-click-picker
+紫
+disable期間が一つしか設定できない。カスタマイズした。
+inputタグもクラスの追加ができるのかできないのか？？？
+起動自に
+rimrafがいる？
+osに依存しないrmコマンド。build時にclearnしたいらしい。
+グローバルにいれる。
+yarn add -g rimraf >>> まだしてない。先にビルド。
+
+yarn installもしないとビルドできない。
+
+
+
+

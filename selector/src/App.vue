@@ -5,17 +5,30 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     -->
     <selector />
+        <clock />
+        <clock2 />
+        <height />
+        <qrcode />
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
 import selector from './components/selector.vue'
+import clock from './components/clock.vue'
+import clock2 from './components/clock2.vue'
+import height from './components/height.vue'
+import qrcode from './components/qrcode.vue'
+
 export default {
   name: 'App',
   components: {
     //HelloWorld,
-    selector
+    selector,
+    clock,
+    clock2,
+    height,
+    qrcode
   }
 }
 </script>

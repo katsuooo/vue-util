@@ -1,0 +1,10 @@
+200908
+
+clockタイプtime picker
+
+yarn add vue-clock-picker --save
+pug-plain-loader
+pug
+もローカルにインストール。
+
+

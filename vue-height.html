@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="columns">
+        <div class="left-column" id="context">
+            <p>Some text</p>
+        </div>
+        <div class="right-column" id="info-box" ref="infoBox">
+            <img />
+            <ul>
+                some list
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        components: {
+          VueClockPicker,
+        },
+        data() {
+          return {
+            value: '00:03',
+            anotherValue: '',
+          }
+        },
+        mounted () {
+           this.matchHeight()
+        },
+        matchHeight () {
+            let height = this.$refs.infoBox.clientHeight;
+        }
+      })
+    </script>
+</body>
+</html>
+
+
+
