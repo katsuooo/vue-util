@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>class</title>
+        <style>
+          .testPro{
+            color: red;
+          }
+          .ttext2{
+            color:yellow
+          }
+        </style>
+
+    </head>
+    <body>
+      <div id="app">
+        <p>{{msg}}</p>
+        <p>text property change by vue parameter(isActive)</p>
+        <button @click="sayHello" :class='{testPro: isActive}'>Hi!</button>
+        <p>text property change by object(.isActive)</p>
+        <ul v-for='n in names' :key=n.name>
+          <li :class='{ttext2: n.isActive}' @click='liclick(n)'>{{n.name}}</li>
+        </ul>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+      <script>
+        new Vue({
+          el: "#app",
+          data: {
+            msg: "Welcome",
+            isActive:false,
+            names:[]
+          },
+          beforeMount(){
+            for(let i=0; i<10; i++){
+              this.names.push({name: i.toString(), isActive: false})
+            }
+          },
+          methods: {
+            sayHello(){
+              this.msg = "Hello!"
+              if(this.isActive === false){
+                this.isActive = true;
+              } else{
+                this.isActive = false;
+              }
+            },
+            liclick(n){
+              console.log('liclick')
+              if(n.isActive){
+                n.isActive = false
+              }else{
+                n.isActive = true
+              }
+            }
+          },
+          mounted(){
+            //表示後にやりたいことはここに書ける
+          }
+        })
+      </script>
+    </body>
+</html>

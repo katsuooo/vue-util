@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .textColor{color:red;}
+    </style>
+</head>
+<body>
+    <span :class='{textColor: isActive}' @click='colorChange()'>
+      class test
+    </span>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        components: {
+        },
+        data() {
+          return {
+            isActive: false
+          }
+        },
+        mounted () {
+        },
+        methods:{
+          colorChange(){
+            console.log('click-color-change')
+            if(isActive){
+              isActive = false;
+            } else{
+              isActive = true;
+            }
+          }
+        }
+
+      })
+    </script>
+</body>
+</html>
+
+
+

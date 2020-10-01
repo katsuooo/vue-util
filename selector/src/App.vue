@@ -10,6 +10,7 @@
         <height />
         <qrcode />
         <editor />
+        <keyboard />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import clock2 from './components/clock2.vue'
 import height from './components/height.vue'
 import qrcode from './components/qrcode.vue'
 import editor from './components/editor.vue'
+import keyboard from './components/keyboard.vue'
 
 export default {
   name: 'App',
@@ -31,7 +33,8 @@ export default {
     clock2,
     height,
     qrcode,
-    editor
+    editor,
+    keyboard
   }
 }
 </script>
