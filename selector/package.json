@@ -11,6 +11,7 @@
     "@pencilpix/vue2-clock-picker": "^0.1.6",
     "core-js": "^3.6.5",
     "css-loader": "^4.2.2",
+    "historykana": "^1.0.4",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "vue": "^2.6.11",

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>one-html</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+            .fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}
+        </style>
+    </head>
+    <body>
+
+
+        <div class="container-fluid" id="app">
+          <br>
+          <br>
+          <table border="1" class="table table-bordered">
+            <thead class="thead-inverse">
+              <tr>
+                <th>anim</th>
+              </tr>
+            </thead>
+            <tbody  name="fade" is="transition-group">
+              <template v-for="item, k in items">
+                  <tr v-bind:key="`button-${item.data}`">
+                    <td>
+                      <button @click="item.more = !item.more" 
+                              type="button" 
+                              v-bind:class="[item.more ? 'btn-danger' : 'btn-primary']" 
+                              class="btn">Show the hidden row
+                      </button>
+                    </td>
+                  </tr>
+                  <tr  v-bind:key="`detail-${item.data}`" v-if="item.more">
+                    <td><p >{{k + 1}} - {{item.data}}</p></td>
+                  </tr>
+                </template>
+            </tbody>
+          </table>
+        </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+      <script>
+        new Vue({
+          el: "#app",
+          data: {
+            items: [{
+        data: 'd1',
+        more: false
+      },
+      {
+        data: 'd2',
+        more: false
+      },
+    ]
+          },
+          methods: {
+            sayHello(){
+              this.msg = "Hello!"
+            }
+          },
+          mounted(){
+            //表示後にやりたいことはここに書ける
+          }
+        })
+      </script>
+    </body>
+</html>

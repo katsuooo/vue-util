@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!-- Here's a way to animate/transition 
+the opacity and display of your div! -->
+<head>
+
+<style>
+    /*This is a fade in example.*/
+    @keyframes fadeIn {
+      0% {display:none; opacity:0;}
+      1% {display:block; opacity:0;}
+      100% {display:block; opacity:1;}
+    }
+    /*This is a fade out example. */
+    @keyframes fadeOut {
+      0% {display:block; opacity:1;}
+      1% {display:none; opacity:1;}
+      100% {display: none; opacity:0;}
+    }
+    #animate {
+      /*put animation attributes here. Here's a list.
+      (https://www.w3schools.com/css/css3_animations.asp)*/
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      /*put the default display and opacity here, the same as "0%"*/
+      display: none;
+      opacity: 0;
+    }
+  </style>
+  <script>
+    function appear() {
+      document.getElementById('animate').style.animationName = "example";
+      /* you can also change the display completely after the animation 
+      is done. (setTimeout, same time as animation-duration). For example,
+      setTimeout after 2 seconds, and make function .style.display = "block";
+      and style.opacity = "1"; to make the change permanent. */
+    }
+  </script>
+      
+</head>
+<body>
+
+
+  <!-- You can put anything to activate the function, by the way. -->
+  <button onclick="appear()"> example </button>
+  <!-- This div is what's being animated, which explains why the function
+  appear() has 'animate' in it. -->
+  <div id="animate"> </div>
+</body>
+</html>

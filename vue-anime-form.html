@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>vue-anime-form</title>
+        <style scoped>
+          .flex {
+            display: flex;
+          }
+          
+          .my-enter-active {
+            transition: all .8s ease;
+          }
+          
+          .my-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+          }
+          
+          .my-enter, .my-leave-to {
+            transform: translateX(10px);
+            opacity: 0;
+          }
+          </style>
+    </head>
+    <body>
+      <div id="app">
+        <p>{{msg}}</p>
+        <button @click="sayHello">Hi!</button>
+        <transition-group name='my' tag='form'>
+          <input type='text' v-if='isActive' key='myInput'>
+        </transition-group>
+        <span>bbb</span>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+      <script>
+        new Vue({
+          el: "#app",
+          data: {
+            msg: "Welcome",
+            isActive:false
+          },
+          methods: {
+            sayHello(){
+              this.msg = "Hello!"
+              this.isActive = !this.isActive
+            }
+          },
+          mounted(){
+            //表示後にやりたいことはここに書ける
+          }
+        })
+      </script>
+    </body>
+</html>

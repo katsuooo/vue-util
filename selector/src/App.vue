@@ -11,6 +11,7 @@
         <qrcode />
         <editor />
         <keyboard />
+        <autoKana />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import height from './components/height.vue'
 import qrcode from './components/qrcode.vue'
 import editor from './components/editor.vue'
 import keyboard from './components/keyboard.vue'
+import autoKana from './components/autoKana.vue'
 
 export default {
   name: 'App',
@@ -34,7 +36,8 @@ export default {
     height,
     qrcode,
     editor,
-    keyboard
+    keyboard,
+    autoKana
   }
 }
 </script>

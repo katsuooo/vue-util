@@ -1,0 +1,88 @@
+console.clear()
+new Vue({
+    el: '#data',
+    template: `
+
+`,
+data: {
+
+}
+
+});
+
+
+
+
+
+<html>
+    <head>
+        <title>table-animation</title>
+        <style>
+            .fade-enter-active, .fade-leave-active {
+                transition: opacity 2s
+              }
+              .fade-enter, .fade-leave-to  {
+                opacity: 0
+              }
+            </style>
+    </head>
+    <body>
+      <div id="app">
+        <p>{{msg}}</p>
+        <button @click="sayHello">Hi!</button>
+        <div>
+            <br>
+        <br>
+        <table border="1" class="table table-bordered">
+          <thead class="thead-inverse">
+            <tr>
+              <th>anim</th>
+            </tr>
+          </thead>
+          <tbody>  
+          <template v-for="item, k in items">
+            <tr>
+              <td><button @click="item.more = !item.more" type="button" 
+                           v-bind:class="[item.more ? 'btn-danger' : 'btn-primary']" class="btn">Show the hidden row</button></td>
+            </tr>
+  
+            <transition name="fade" > 
+              <tr  v-bind:key="item" v-if="item.more">
+                <td><p >{{k + 1}} - {{item.data}}</p></td>
+              </tr>
+            </transition>
+  
+          </template>
+          </tbody>
+      </table>
+  </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+      <script>
+        new Vue({
+          el: "#app",
+          data: {
+            msg: "Welcome",
+            items: [
+  {
+    data: 'd1',
+    more: false
+  },
+  {
+    data: 'd2',
+    more: false
+  },
+]
+          },
+          methods: {
+            sayHello(){
+              this.msg = "Hello!"
+            }
+          },
+          mounted(){
+            //表示後にやりたいことはここに書ける
+          }
+        })
+      </script>
+    </body>
+</html>
