@@ -12,6 +12,11 @@
         <editor />
         <keyboard />
         <autoKana />
+        <FocusLock>
+          You can not leave this form
+          <!--<button @click="onClick" />-->
+          <input type='text'>
+        </FocusLock>
   </div>
 </template>
 
@@ -25,6 +30,7 @@ import qrcode from './components/qrcode.vue'
 import editor from './components/editor.vue'
 import keyboard from './components/keyboard.vue'
 import autoKana from './components/autoKana.vue'
+import FocusLock from 'vue-focus-lock'
 
 export default {
   name: 'App',
@@ -37,7 +43,8 @@ export default {
     qrcode,
     editor,
     keyboard,
-    autoKana
+    autoKana,
+    FocusLock
   }
 }
 </script>

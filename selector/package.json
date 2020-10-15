@@ -16,6 +16,7 @@
     "pug-plain-loader": "^1.0.0",
     "vue": "^2.6.11",
     "vue-clock-picker": "^0.4.2",
+    "vue-focus-lock": "^1.4.0",
     "vue-qrcode-reader": "^2.3.13",
     "vue-select": "^3.10.8",
     "vue2-editor": "^2.10.2"
