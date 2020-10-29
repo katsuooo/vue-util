@@ -17,6 +17,11 @@
           <!--<button @click="onClick" />-->
           <input type='text'>
         </FocusLock>
+        <hr />
+        <h5>vue-qrcode</h5>
+        <vue-qrcode value="Hello, World!" :options="{ width: 200 }"></vue-qrcode>
+        <vue-qrcode value="Hello, World!" :options="{ width: 200 }"></vue-qrcode>
+        <fileDownload />
   </div>
 </template>
 
@@ -31,6 +36,8 @@ import editor from './components/editor.vue'
 import keyboard from './components/keyboard.vue'
 import autoKana from './components/autoKana.vue'
 import FocusLock from 'vue-focus-lock'
+import VueQrcode from 'vue-qrcode'
+import fileDownload from './components/fileDownload.vue'
 
 export default {
   name: 'App',
@@ -44,7 +51,9 @@ export default {
     editor,
     keyboard,
     autoKana,
-    FocusLock
+    FocusLock,
+    VueQrcode,
+    fileDownload
   }
 }
 </script>

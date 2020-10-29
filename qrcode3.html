@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="robots" content="all">
+<meta name="description" content="QRコード・二次元バーコードを無料(Free)で作成可能です。URLやメールアドレスのQRコード作成時はチェックが行われるためQRコードの作成間違いなどを防ぐことが出来ます。また、地図のQRコードは実際の地図を見ながらQRコードが作成できます。ホームページの宣伝などにご利用ください。">
+<meta name="keywords" content="QRコード,二次元,バーコード,作成,無料,商用可,URL,メールアドレス,地図">
+
+<title>QRコード(二次元バーコード）作成【無料】</title>
+<link href="css/tm01_V2.css" rel="stylesheet" type="text/css" id="tm01css" title="tm01css">
+<script type="text/javascript" src="js/tm01_V2.js"></script>
+<style type="text/css">
+<!--
+-->
+</style>
+<script type="text/javascript">
+<!--
+var gChenge = 0;
+window.onpageshow = function(event) {
+comJikkoPopOFF();
+}
+function pageOnload(){
+comStartScroll();
+btClassSet();
+comTextAreaResize(document.getElementById("textString"));
+comMenuCookieSet('free');
+}
+function pageResize(){
+}
+/**
+ make qr
+*/
+function makeQR(){
+     var wObjInStr	= document.getElementById("textString");
+     wObjInStr.value = comCRLF_trim(wObjInStr.value);
+     if(document.getElementById("qrCreateBt").className == "opeBtn"){
+     }else{
+          return;
+     }
+     if(wObjInStr.value.length > 500){
+          comErrMsgSet('500文字以内としてください '+'<a href="/QRcode/faq/qa2_character_length/" class="helpS">?</a>');
+          return;
+     }
+     if(wObjInStr.value == ''){
+          wObjInStr.focus();
+          btClassSet();
+     }
+     else{
+          comQrJikko();
+     }
+}
+function inChenge(argObj){
+comErrMsgSet('');
+btClassSet();
+comTextAreaResize(argObj);
+}
+//-->
+</SCRIPT>
+</head>
+<body>
+<div id="tmMainFrame" style="width: 950px;">
+<div id="tmHead">
+<a href="https://www.cman.jp/QRcode/"><img src="//sozai.cman.jp/imgQR/pageTopLogo.png" width="950" alt="QRコード作成" style="max-width: 950px;width: 100%;height: auto;"></a>
+</div>
+<div id="tmHeadAd">
+
+</div>
+<div id="tmPageLevel">
+<a href="https://www.cman.jp/"><img src="//sozai.cman.jp/imgQR/tmCmanjpIco.gif" width="16" height="16" alt="cman.jp" style="vertical-align: -4px;"> cman.jp</a><a href="/"></a> &gt; QRコード作成
+</div>
+<div id="tmSideMain">
+<div id="tmRightCont">
+<div id="tmContHeadStr">
+</div>
+<div id="tmContMain">
+<div>
+<div  style="width:643px;float:left;">						<!-- ■smart_cng	style="width:643px;float:left;"		 -->
+<h1>QRコード[二次元バーコード]作成 【無料】</h1>
+<div id="qrShurui" style="padding:10px 5px;text-align: center;"><div style="margin:5px 0;"><div class="kinoBtn selOn"  id="idStrBtFree">自由入力</div><div class="kinoBtn selOff" onclick="location.href='/QRcode/qr_url/';" id="idStrBtUrl">URL用QR</div><div class="kinoBtn selOff" onclick="location.href='/QRcode/qr_mail/';" id="idStrBtMail">メールQR</div><div class="kinoBtn selOff" onclick="location.href='/QRcode/qr_map/';" id="idStrBtMap">地図QR</div><div class="kinoBtn selOff" onclick="location.href='/QRcode/qr_history/';" id="idKinoBtHistory">作成済一覧</div></div></div>
+
+<div class="tmMargL15px">
+<p style="margin-top:0">QRコードを無料で作成できます。商用利用も無料です。<br>「URL用QR」「メールQR」のメニューでは入力されたURL（ホームページアドレス）やメールアドレスのチェックが行われQRコードに変換されますので入力ミスの軽減となります。<br>「地図QR」メニューでは実際に地図を見ながらQRコードを作成することが出来ます。</p>
+<p>QRコードを文字で囲めるようにまりました。文字入れデザインのQRでも読み取り精度は低下しません。是非、囲み文字をお試しください。</p>
+</div>
+
+<h2 style="margin-top:30px">自由入力のQRコードを作成</h2>
+<div class="opeTitleArea">
+<table class="opeTitleTable">
+<tr>
+<td class="opeTitleLeft">【1】QRコードを作成する文字を指定しよう <a href="/QRcode/operation/free/" class="helpS">?</a></td>
+<td class="opeTitleRight"><div class="resetBtn" onclick="comReset('str');">リセット</div></td>
+</tr>
+</table>
+</div>
+<div class="tmMargL15px" style="margin-right:10px;clear: both;">
+<div class="err-msg" style="display:none;margin-bottom:10px" id="errMsg"></div>
+<textarea class="strin" style="width:100%;min-height:50px;" id="textString" oninput="inChenge(this)" onchange="inChenge(this)" placeholder="ここにQRコードを作成する文字を入力してください"></textarea>
+</div>
+<div class="opeTitleArea">
+<table class="opeTitleTable" id="optionSelArea">
+<tr>
+<td class="opeTitleLeft">【2】オプション（任意） <a href="/QRcode/operation/option/" class="helpS">?</a></td>
+<td class="opeTitleRight"><div class="resetBtn" onclick="comReset('option');">リセット</div></td>
+</tr>
+</table>
+</div>
+<div class="tmMargL15px">
+<div style="border:1px solid #ccc;position: relative;"><div class="tmMargL15px"><table style="width:98%;max-width:500px;box-sizing	: border-box;"><colgroup span="1" style="width:25%;max-width:120px"><colgroup span="1" style="width:63%;max-width:340px"><colgroup span="1" style="width:7%;max-width:40px;">
+
+<tr><td><div class="optionBtn" onclick="comOptionWin('cellsize');">セルサイズ</div></td><td id="optionCellSizeGaid"><select id="selCellSize" class="optionSel"><option value="01"> 1倍 </option><option value="02"> 2倍 </option><option value="03" selected> 3倍 【推奨】</option><option value="04"> 4倍 </option><option value="05"> 5倍 </option><option value="06"> 6倍 </option><option value="07"> 7倍 </option><option value="08"> 8倍 </option><option value="09"> 9倍 </option><option value="10"> 10倍 </option></select></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('cellsize');" title="セルサイズの選択">?</div></td></tr>
+<tr><td><div class="optionBtn" onclick="comOptionWin('version');">セル数</div></td><td id="optionVersionGaid"><select id="selVersion" class="optionSel"><option value="00" selected> 自動判別 【推奨】 </option><option value="01"> バージョン1 ( 21 x 21 ) </option><option value="02"> バージョン2 ( 25 x 25 ) </option><option value="03"> バージョン3 ( 29 x 29 ) </option><option value="04"> バージョン4 ( 33 x 33 ) </option><option value="05"> バージョン5 ( 37 x 37 ) </option><option value="06"> バージョン6 ( 41 x 41 ) </option><option value="07"> バージョン7 ( 45 x 45 ) </option><option value="08"> バージョン8 ( 49 x 49 ) </option><option value="09"> バージョン9 ( 53 x 53 ) </option><option value="10"> バージョン10 ( 57 x 57 ) </option><option value="11"> バージョン11 ( 61 x 61 ) </option><option value="12"> バージョン12 ( 65 x 65 ) </option><option value="13"> バージョン13 ( 69 x 69 ) </option><option value="14"> バージョン14 ( 73 x 73 ) </option><option value="15"> バージョン15 ( 77 x 77 ) </option><option value="16"> バージョン16 ( 81 x 81 ) </option><option value="17"> バージョン17 ( 85 x 85 ) </option><option value="18"> バージョン18 ( 89 x 89 ) </option><option value="19"> バージョン19 ( 93 x 93 ) </option><option value="20"> バージョン20 ( 97 x 97 ) </option><option value="21"> バージョン21 ( 101 x 101 ) </option><option value="22"> バージョン22 ( 105 x 105 ) </option><option value="23"> バージョン23 ( 109 x 109 ) </option><option value="24"> バージョン24 ( 113 x 113 ) </option><option value="25"> バージョン25 ( 117 x 117 ) </option><option value="26"> バージョン26 ( 121 x 121 ) </option><option value="27"> バージョン27 ( 125 x 125 ) </option><option value="28"> バージョン28 ( 129 x 129 ) </option><option value="29"> バージョン29 ( 133 x 133 ) </option><option value="30"> バージョン30 ( 137 x 137 ) </option><option value="31"> バージョン31 ( 141 x 141 ) </option><option value="32"> バージョン32 ( 145 x 145 ) </option><option value="33"> バージョン33 ( 149 x 149 ) </option><option value="34"> バージョン34 ( 153 x 153 ) </option><option value="35"> バージョン35 ( 157 x 157 ) </option><option value="36"> バージョン36 ( 161 x 161 ) </option><option value="37"> バージョン37 ( 165 x 165 ) </option><option value="38"> バージョン38 ( 169 x 169 ) </option><option value="39"> バージョン39 ( 173 x 173 ) </option><option value="40"> バージョン40 ( 177 x 177 ) </option></select></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('version');" title="バージョンの選択">?</div></td></tr>
+<tr><td><div class="optionBtn" onclick="comOptionWin('level');">誤り訂正</div></td><td id="optionLevelGaid"><select id="selLevel" class="optionSel"><option value="L"> レベルL ( 7%復元能力)</option><option value="M"> レベルM (15%復元能力)</option><option value="Q"> レベルQ (25%復元能力)</option><option value="H" selected> レベルH (30%復元能力)【推奨】 </option></select></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('level');" title="誤り訂正の選択">?</div></td></tr>
+<tr><td><div class="optionBtn" onclick="comOptionWin('color');">セル色</div></td><td id="optionColorGaid"><div style="display:inline-block;width:100%;max-width:160px">セル色<div style="display:inline-block;width:14px;height:22px;margin:0 1px 0 5px;cursor:pointer;border:1px solid #ccc;vertical-align: middle;background-color:#000000" onclick="comOptionWin('color');" id="sampleCellColor"></div><input type="text" maxlength="7" id="textCellColor" value="#000000" onchange="comOptionColorSet();" class="optionSel" style="margin-right:10px;"></div><div style="display:inline-block;width:100%;max-width:160px">背景色<div style="display:inline-block;width:14px;height:22px;margin:0 1px 0 5px;cursor:pointer;border:1px solid #ccc;vertical-align: middle;background-color:#FFFFFF" onclick="comOptionWin('color');" id="sampleBgColor"></div><input type="text" maxlength="7" id="textBgColor" value="#FFFFFF" onchange="comOptionColorSet();" class="optionSel"></div></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('color');" title="色の選択">?</div></td></tr>
+<tr><td><div class="optionBtn" onclick="comOptionWin('loopstr');"><span style="color:red;font-size:80%" class="blinkM">New! </span>囲み文字</div></td><td id="optionLoopGaid"><select id="selLoopStr" class="optionSel" onchange="loopStrChenge()"><option value="0" selected> 囲み文字を使用しない</option><option value="1"> QRコード作成文字で囲む</option><option value="2"> 囲む文字を指定する</option></select></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('loopstr');" title="囲み文字の指定">?</div></td></tr>
+<tr><td><div class="optionBtn" onclick="comOptionWin('format');">画像形式</div></td><td id="optionFormatGaid"><select id="selFormat" class="optionSel"><option value="GIF"> GIF形式 【推奨】</option><option value="PNG" selected> PNG形式 【推奨】</option><option value="JPG"> JPEG形式</option></select></td><td style="padding-left:10px;padding-right:10px;"><div class="helpS" onclick="comOptionWin('format');" title="ファイル形式の選択">?</div></td></tr>
+</table></div>
+<div style="position: absolute;bottom: 5px;right:5px;cursor:pointer;" onclick="comOptionWin('loopstr')" id="kakomiGaid8"><img src="/QRcode/image/qrLoopStrGaid8.gif" alt="囲み文字QRコード"></div></div>
+</div>
+<div style="margin-top:25px;clear: both;">
+<p style="text-align:center;"><img src="https://sozai.cman.jp/imgQR/tugi1.png" width="199" height="17" border="0"></p>
+<p style="text-align:center;">無料でご利用いただけますが、必ず「<a href="/QRcode/info/">注意事項・制約事項</a>」をご確認ください。</p>
+<!--
+<div style="border: 1px solid #999;text-align:center;padding:5px;max-width:200px;margin:0 auto;">現在、メンテナンス中です</div>
+<div class="opeBtn noSel" style="display:none" id="qrCreateBt">QRコードを作成する</div>
+-->
+<div class="opeBtn noSel" onclick="makeQR()" id="qrCreateBt">QRコードを作成する</div>
+</div>
+<input type="hidden" value="" id="textTitle">
+<div style="margin:40px 0 20px 0;text-align:center;">
+<div style="margin:0 3px;display:inline-block;">
+<div class="tmAdGaid">広告</div>
+<div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 300x250, 作成済み 10/09/02 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-5032335798617606"
+     data-ad-slot="2510084206"></ins>
+<script>
+
+</script>
+</div>
+</div>
+<div style="margin:0 3px;display:inline-block;">
+
+<div>
+
+<!-- 300x250, 作成済み 10/09/02 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-5032335798617606"
+     data-ad-slot="2510084206"></ins>
+<script>
+
+</script>
+</div>
+</div>
+</div>
+
+<div style="clear: both;"><a href="#tmMainFrame" class="tmPageTop">ページTOP</a></div>
+<h3>QRコード作成の便利な機能</span></h3>
+<div class="tmMargL15px" style="margin-top:20px;">
+<dl class="noteDL">
+<dt>URL（ホームページのアドレス）のQRコード
+<dd>「<a href="qr_url/">URL用QR</a>」メニューをご利用いただくと、QRコードを作成すると同時にホームページの実在チェックも行われます。このため、URLの入力ミスによる誤ったQRコード作成を防ぐことが出来ます。
+<dt>メールアドレスのQRコード
+<dd>「<a href="qr_mail/">メールQR</a>」メニューをご利用いただくと、QRコードを作成すると同時にメールアドレスの体系チェックとメールサーバの実在チェックも行われます。このため、メールアドレス入力ミスによる誤ったQRコード作成を防ぐことが出来ます。
+<dt>地図のQRコード
+<dd>「<a href="qr_map/">地図QR</a>」メニューをご利用いただくと、実際の地図を見ながら地図QRコードを作成することが出来ます。Googleマップなどの地図サイトの操作が苦手な方も簡単に地図QRコードを作成できます。<br>GPSの現在地からも地図のQRが作成できるようになりました。
+<dt>作成したQRコードの保存
+<dd>「<a href="qr_history/">作成済QR</a>」メニューをご利用いただくと、当サイトで作成したQRコードが一覧形式で表示されます。<br>試しに何種類もQRコードを作成して、後で必要なQRコードのみをまとめてダウンロードすることが出来ます。
+</dl>
+</div>
+<p style="font-size:80%;color:#666;margin-top:20px">「QRコード」は株式会社デンソーウェーブ様の登録商標です。</p>
+</div>
+<div id="tmContHeadAd1" style="width:302px;float:right">	<!-- ■smart_cng	style="width:302px;float:right"		 -->
+<div>
+<div class="tmAdGaid">広告</div>
+<div>
+
+<!-- 300x600 QRコード作成 -->
+
+<script>
+
+</script>
+</div>
+</div>
+
+<div style="margin: 5px 3px;"><table class="rightMenu"><tr><td colspan="2" class="mtd sel" onclick="location.href='/QRcode/info/';">ご利用時の注意事項・制約事項</td></tr><tr><td colspan="2" class="mtd nosel" onclick="location.href='/QRcode/faq/';">よくあるご質問</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa1_free_service/';">何で無料なの？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa1_security/';">QRコードに保証はある？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa4_qr_licence/';">QRコードのライセンスは？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa4_qr_use/';">QRコードは自由に使用できる？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa2_character_type/';">使用できる文字は？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa2_qrcode/';">そもそも「QR」ってなに？</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/qa1_string_image/';">文字や画像の重ねは無くなった？</td></tr><tr><td class="nosel2"></td><td class="mtd sel" onclick="location.href='/QRcode/faq/';">その他（一覧）</td></tr><tr><td colspan="2" class="mtd nosel" onclick="location.href='/QRcode/operation/';">操作方法</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/operation/free/';">自由入力のQRコード作成方法</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/operation/url/';">URLのQRコード作成方法</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/operation/mail/';">メールアドレスのQRコード作成方法</td></tr><tr><td class="nosel"></td><td class="mtd sel" onclick="location.href='/QRcode/operation/map/';">地図のQRコード作成方法</td></tr><tr><td class="nosel2"></td><td class="mtd sel" onclick="location.href='/QRcode/operation/option/';">オプションの指定方法</td></tr></table></div>
+
+</div>
+</div>
+<div style="clear: both;"><a href="#tmMainFrame" class="tmPageTop">ページTOP</a></div>
+</div>
+<div id="tmPageCtrl">
+</div>
+</div>
+</div>
+
+<div id="tmBottomAd">
+<div class="tmAdGaid">広告</div>
+<div>
+
+<!-- auto QRコード作成 -->
+
+<script>
+
+</script>
+</div>
+
+</div>
+<div id="tmFooter">
+<table>
+<tr>
+<td  style="width:140px;text-align: center;vertical-align: top;line-height:1em;"><img src="//image-convert.cman.jp/qrOut2/qrImgPut.cgi?u=https%3A%2F%2Fwww%2Ecman%2Ejp%2FQRcode%2F" alt="QrCode"><div style="margin-top:3px;font-size:90%">このページのURL</div></td>
+<td id="tmFooterLink">
+<a class="tmMenuM" href="/QRcode/info/">当サイトについて</a>
+<a class="tmMenuM" href="/QRcode/qr_contact/">お問い合わせ</a>
+<a class="tmMenuM" href="/QRcode/qr_release/">お知らせ</a>
+<hr style="border: dotted 1px #cccccc;margin: 2px 0;pagging:0;">
+<div id="cmanLinkGaid" style="display:none;border-style: outset;margin-bottom:10px;" class="divA" onclick="cmanLinkGaidClick()"><div style="display:inline-block;padding: 1px 5px 2px 18px;">cman無料サービス一覧</div></div>
+<div id="cmanLinkMeisai" style="">
+<a href="https://www.cman.jp/">cman.jp</a>
+<a href="https://www.cman.jp/network/">サーバ監視【無料】</a>
+<a href="https://image-convert.cman.jp/">画像加工【無料】</a>
+<a href="https://htaccess.cman.jp/">htaccess作成【無料】</a>
+<a href="https://note.cman.jp/">WEB便利ノート【無料】</a>
+<a href="https://hikaku.cman.jp/">IT比較実験【無料】</a>
+<a href="https://text-img.cman.jp/">文字/ボタンのイメージ画像作成【無料】</a>
+<a href="https://sozai.cman.jp/">アイコン素材【無料】</a>
+<a href="https://web-designer.cman.jp/">WEBページ作成リファレンス【無料】</a>
+<a href="https://webparts.cman.jp/">ホームページのパーツ作成【無料】</a>
+</div>
+</td>
+</tr>
+</table>
+
+</div>
+<div id="tmDevice">
+<table style="width:100%"><tr><td><div onClick="tmChangeView('smart')" id="tmViewSmart" class="divA">スマートフォン・タブレット</div></td><td style="text-align: right;"><a href="https://www.cman.co.jp" style="color: #666">運営:株式会社シーマン</a></td></tr></table>
+</div>
+</div>
+
+<form name="fm1" id="form1">
+<input type="hidden" name="QrSes"			value="O2020102516580125515G4xFXGwZHAwnq6Z"		id="idQrSes">
+<input type="hidden" name="inStrShurui"	value="Free"	id="idInStrShurui">
+<input type="hidden" name="inStr"			value=""						id="idInStr">
+<input type="hidden" name="inTitle"		value=""					id="idInTitle">
+<input type="hidden" name="inVersion"		value="0"		id="idInVersion">
+<input type="hidden" name="inCellSize"		value="3"		id="idInCellSize">
+<input type="hidden" name="inLevel"		value="H"			id="idInLevel">
+<input type="hidden" name="inCellColor"	value="#000000"		id="idInCellColor">
+<input type="hidden" name="inBgColor"		value="#FFFFFF"		id="idInBgColor">
+<input type="hidden" name="inFileForm"		value="PNG"		id="idInFileForm">
+<input type="hidden" name="inKyoseiQr"		value=""								id="idInKyoseiQr">
+<input type="hidden" name="inScroll"		value=""								id="idInScroll">
+<input type="hidden" name="inLoopStrKbn"	value="0"	id="idInLoopStrKbn">
+<input type="hidden" name="inLoopStr"		value=""		id="idInLoopStr">
+<input type="hidden" name="inLoopSize"		value="10"		id="idInLoopSize">
+<input type="hidden" name="inLoopFont"		value=""		id="idInLoopFont">
+<input type="hidden" name="inLoopColor"	value="AUTO"		id="idInLoopColor">
+<input type="hidden" name="inLoopPos"		value="0"		id="idInLoopPos">
+<input type="hidden" name="inLoopCnt"		value="1"		id="idInLoopCnt">
+<input type="hidden" name="inLoopYohaku"	value="0"	id="idInLoopYohaku">
+<input type="hidden" name="checkKekka"		value=""								id="idCheckKekka">
+</form>
+<input type="hidden" value="" id="startId">
+<div id="popJikko" style="display:none;background-color:#fff;position:absolute;width: 290px;z-index: 9;padding:10px 5px;border:2px solid #666;text-align:center"><div><img src="//sozai.cman.jp/imgQR/jikko_maru.gif"></div><div style="margin:5px 0 10px 0;font-size:120%">作成中です</div><div style="margin:5px 0 0 0">30秒程度掛かる場合もあります</div></div>
+<div id="JikkoOverlay" style="display:none;position:absolute;top:0;left:0;z-index:8;background-color:rgba(128,128,128,0.2)"></div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59983240-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<input type="hidden" value="0" id="tmCgiSideOff">
+</body>
+</html>
