@@ -4,6 +4,9 @@
     <vueCsvDownloaderTest />
     <vueJsonToCsvTest />
     <vueSelectOption />
+    <hr />
+    <h5>draggable clone</h5>
+    <draggableClone />
   </div>
 </template>
 
@@ -13,6 +16,7 @@
 import vueCsvDownloaderTest from './components/vueCsvDownloaderTest.vue'
 import vueJsonToCsvTest from './components/vueJsonToCsvTest.vue'
 import vueSelectOption from './components/vueSelectOption.vue'
+import draggableClone from './components/draggableClone.vue'
 
 export default {
   name: 'App',
@@ -20,7 +24,8 @@ export default {
     //HelloWorld,
     vueCsvDownloaderTest,
     vueJsonToCsvTest,
-    vueSelectOption
+    vueSelectOption,
+    draggableClone
   }
 }
 </script>

@@ -1,0 +1,29 @@
+201120
+
+draggableでコピー
+コピー先でキー重複のエラーがでる。
+v-forのキーになにか加える。
+
+<ul>
+    <li v-for="(fruit, index) in fruits" :key="`fruit-${index}`"></li>
+</ul>
+
+チルダつきで変数＋のキー文字列を生成
+
+
+@changeで変化時のイベントをとれる。
+
+@change='log'
+
+method:
+    log: function(evt){
+
+    }
+
+
+        :group="{ name: 'people', pull: 'clone', put: true }"
+でputできる。
+
+added, removedのイベントも発生。
+
+
